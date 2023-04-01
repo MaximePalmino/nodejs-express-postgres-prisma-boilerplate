@@ -12,3 +12,4 @@ router.get("/profile", isAuthenticated, (req, res) => {
 });
 
 export default router;
+
