@@ -1,0 +1,3 @@
+Kill Port (mac):
+sudo lsof -i :3000
+sudo kill -9 <PID>
