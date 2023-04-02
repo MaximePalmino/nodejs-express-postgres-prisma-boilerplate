@@ -1,19 +1,15 @@
 import express from 'express';
+import {createUser, getAllUsers, helloUsers} from "../controllers/user.controller";
+
+// Variables
 const router = express.Router();
-// import { createUserController } from '../controllers/user.controller';
 
 
-router.get('/', (req, res) => {
-    res.send('User routes!');
-});
-
-
-router.get('/user',(req, res) => {
-    res.send({
-        tshirt: "👋🏽"
-    })
-})
-// router.post('/', createUserController);
+router.get('/', helloUsers)
+// Create a new user
+router.post("/users", createUser)
+// Get all users
+router.get('/users', getAllUsers)
 
 
 export default router;
