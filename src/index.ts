@@ -1,15 +1,13 @@
 import express from 'express';
 import routes from './api/routes/index';
-import {AppConfig} from "./config/AppConfig";
-import bodyParser from 'body-parser';
+import {AppConfig} from './config/AppConfig';
 
 const app = express();
 
-// Use body-parser middleware to parse JSON request bodies
-app.use(bodyParser.json());
+// Use built-in Express middleware to parse JSON request bodies
+app.use(express.json());
 
 app.use(routes);
-
 
 app.listen(AppConfig.PORT, () => {
     console.log(`Server listening on port ${AppConfig.PORT}`);
